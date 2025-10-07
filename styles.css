@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for nav links */
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
@@ -35,6 +39,12 @@ header nav a {
     color: #fff;
     text-decoration: none;
     font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: #6a11cb;
+    text-decoration: underline;
 }
 
 /* Hero Section */
@@ -58,11 +68,26 @@ header nav a {
     margin-top: 1rem;
     font-style: italic;
     font-weight: bold;
+    transition: color 0.3s ease, background 0.3s ease;
+}
+
+#hero .cta:hover {
+    color: #fff;
+    background: rgba(0,0,0,0.2);
+    cursor: default;
 }
 
 /* Sections */
 section {
     padding: 4rem 2rem;
+    opacity: 0;              /* Fade-in initial state */
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 section h2 {
@@ -85,7 +110,7 @@ section h2 {
     border-radius: 10px;
     flex: 1 1 250px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
