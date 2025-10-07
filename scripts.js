@@ -1,7 +1,5 @@
-// Placeholder for future interactivity
 console.log("HarperNet IT Services website loaded");
 
-// Fade-in sections on scroll
 document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll("section");
 
@@ -18,4 +16,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
     sections.forEach(section => observer.observe(section));
 });
-
