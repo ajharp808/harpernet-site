@@ -21,6 +21,9 @@ header {
     background: #1e1e2f;
     color: #fff;
     padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 header nav {
@@ -42,7 +45,8 @@ header nav a {
     transition: color 0.3s ease;
 }
 
-header nav a:hover {
+header nav a:hover,
+header nav a.active {
     color: #6a11cb;
     text-decoration: underline;
 }
@@ -111,11 +115,21 @@ section h2 {
     flex: 1 1 250px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
 }
 
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+}
+
+/* Card images */
+.card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    max-height: 180px;
+    object-fit: cover;
 }
 
 /* Footer */
@@ -129,3 +143,26 @@ footer {
 footer p {
     margin: 0.5rem 0;
 }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .cards {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    #hero h2 {
+        font-size: 2rem;
+    }
+}
+
+
+footer p {
+    margin: 0.5rem 0;
+}
+
